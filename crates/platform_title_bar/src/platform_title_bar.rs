@@ -280,17 +280,6 @@ impl Render for PlatformTitleBar {
             })
             .bg(titlebar_color)
             .content_stretch()
-            .child(
-                div()
-                    .id(self.id.clone())
-                    .flex()
-                    .flex_row()
-                    .items_center()
-                    .justify_between()
-                    .overflow_x_hidden()
-                    .w_full()
-                    .children(children),
-            )
             .when(!window.is_fullscreen(), |title_bar| {
                 let show_right_controls = !(sidebar.open && sidebar.side == SidebarSide::Right);
 
@@ -317,7 +306,18 @@ impl Render for PlatformTitleBar {
                 } else {
                     title_bar
                 }
-            });
+            })
+            .child(
+                div()
+                    .id(self.id.clone())
+                    .flex()
+                    .flex_row()
+                    .items_center()
+                    .justify_between()
+                    .overflow_x_hidden()
+                    .w_full()
+                    .children(children),
+            );
 
         v_flex()
             .w_full()
