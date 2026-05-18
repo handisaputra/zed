@@ -43,6 +43,7 @@ impl RenderOnce for WindowsWindowControls {
             .content_stretch()
             .max_h(self.button_height)
             .min_h(self.button_height)
+            .child(WindowsCaptionButton::Close)
             .child(WindowsCaptionButton::Minimize)
             .map(|this| {
                 this.child(if window.is_maximized() {
@@ -51,7 +52,6 @@ impl RenderOnce for WindowsWindowControls {
                     WindowsCaptionButton::Maximize
                 })
             })
-            .child(WindowsCaptionButton::Close)
     }
 }
 
