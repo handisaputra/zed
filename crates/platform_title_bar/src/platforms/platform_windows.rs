@@ -77,10 +77,10 @@ impl WindowsCaptionButton {
     #[inline]
     fn icon(&self) -> &'static str {
         match self {
-            Self::Minimize => "\u{e921}",
-            Self::Restore => "\u{e923}",
-            Self::Maximize => "\u{e922}",
-            Self::Close => "\u{e8bb}",
+            Self::Minimize => "\u{e949}",
+            Self::Restore => "\u{e948}",
+            Self::Maximize => "\u{e948}",
+            Self::Close => "\u{e947}",
         }
     }
 
