@@ -112,7 +112,7 @@ impl RenderOnce for WindowsCaptionButton {
                     color.opacity(0.8),
                     gpui::white().opacity(0.8),
                 )
-            }
+            },
             _ => (
                 cx.theme().colors().ghost_element_hover,
                 cx.theme().colors().text,
@@ -128,6 +128,7 @@ impl RenderOnce for WindowsCaptionButton {
             .occlude()
             .w(px(36.))
             .h_full()
+            .rounded_full()
             .text_size(px(10.0))
             .hover(|style| style.bg(hover_bg).text_color(hover_fg))
             .active(|style| style.bg(active_bg).text_color(active_fg))
