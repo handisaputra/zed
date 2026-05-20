@@ -1,4 +1,4 @@
-use gpui::{Hsla, Rgba, WindowControlArea, prelude::*};
+use gpui::{Hsla, Rgba, WindowControlArea, rgb, rgba, prelude::*};
 
 use ui::prelude::*;
 
@@ -96,7 +96,7 @@ impl WindowsCaptionButton {
 
 impl RenderOnce for WindowsCaptionButton {
     fn render(self, _: &mut Window, cx: &mut App) -> impl IntoElement {
-        let (hover_bg, hover_fg, active_bg, active_fg) = match self {
+        let (_hover_bg, _hover_fg, _active_bg, _active_fg) = match self {
             Self::Close => {
                 let color: Hsla = Rgba {
                     r: 232.0 / 255.0,
@@ -121,18 +121,44 @@ impl RenderOnce for WindowsCaptionButton {
             ),
         };
 
+        let text_color = cx.theme().colors().text;
+
         h_flex()
-            .id(self.id())
             .justify_center()
             .content_center()
             .occlude()
             .w(px(36.))
             .h_full()
-            .rounded_full()
-            .text_size(px(10.0))
-            .hover(|style| style.bg(hover_bg).text_color(hover_fg))
-            .active(|style| style.bg(active_bg).text_color(active_fg))
-            .window_control_area(self.control_area())
-            .child(self.icon())
+            .child(
+                div()
+                    .id(self.id())
+                    .flex()
+                    .justify_center()
+                    .items_center()
+                    .rounded_full()
+                    .occlude()
+                    .w(px(18.))
+                    .h(px(18.))
+                    .map(|this| match self.id() {
+                        "close" => this
+                            .bg(rgb(0xed6a5f))
+                            .text_color(rgb(0xed6a5f))
+                            .hover(|style| style.text_color(text_color))
+                            .active(|style| style.text_color(text_color)),
+                        "minimize" => this
+                            .bg(rgb(0xf6be50))
+                            .text_color(rgb(0xf6be50))
+                            .hover(|style| style.text_color(text_color))
+                            .active(|style| style.text_color(text_color)),
+                        _ => this
+                            .bg(rgb(0x61c555))
+                            .text_color(rgb(0x61c555))
+                            .hover(|style| style.text_color(text_color))
+                            .active(|style| style.text_color(text_color))
+                    })
+                    .text_size(px(10.0))
+                    .window_control_area(self.control_area())
+                    .child(self.icon())
+            )
     }
 }
