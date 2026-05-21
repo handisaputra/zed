@@ -33,10 +33,12 @@ impl WindowsWindowControls {
 }
 
 impl RenderOnce for WindowsWindowControls {
-    fn render(self, window: &mut Window, _: &mut App) -> impl IntoElement {
+    fn render(self, window: &mut Window, cx: &mut App) -> impl IntoElement {
+
         div()
             .id("windows-window-controls")
             .font_family(Self::get_font())
+            .relative()
             .flex()
             .flex_row()
             .justify_center()
@@ -52,6 +54,45 @@ impl RenderOnce for WindowsWindowControls {
                     WindowsCaptionButton::Maximize
                 })
             })
+            .child(
+                div()
+                    .id("hover-and-click")
+                    .flex()
+                    .absolute()
+                    .top(px(7.0))
+                    .left(px(8.0))
+                    .h(px(18.0))
+                    .w(px(91.0))
+                    .hover(|style| style.opacity(0.0))
+                    .active(|style| style.opacity(0.0))
+                    .child(
+                        div()
+                            .size(px(18.0))
+                            .rounded_full()
+                            .bg(rgb(0xed6a5f))
+                    )
+                    .child(
+                        div()
+                            .flex_grow()
+                    )
+                    .child(
+                        div()
+                            .size(px(18.0))
+                            .rounded_full()
+                            .bg(rgb(0xf6be50))
+                    )
+                    .child(
+                        div()
+                            .flex_grow()
+                    )
+                    .child(
+                        div()
+                            .size(px(18.0))
+                            .rounded_full()
+                            .bg(rgb(0x61c555))
+                    )
+            )
+            
     }
 }
 
@@ -121,7 +162,7 @@ impl RenderOnce for WindowsCaptionButton {
             ),
         };
 
-        let text_color = cx.theme().colors().text;
+        let color = cx.theme().colors().text;
 
         h_flex()
             .justify_center()
@@ -131,7 +172,6 @@ impl RenderOnce for WindowsCaptionButton {
             .h_full()
             .child(
                 div()
-                    .id(self.id())
                     .flex()
                     .justify_center()
                     .items_center()
@@ -139,26 +179,16 @@ impl RenderOnce for WindowsCaptionButton {
                     .occlude()
                     .w(px(18.))
                     .h(px(18.))
-                    .map(|this| match self.id() {
-                        "close" => this
-                            .bg(rgb(0xed6a5f))
-                            .text_color(rgb(0xed6a5f))
-                            .hover(|style| style.text_color(text_color))
-                            .active(|style| style.text_color(text_color)),
-                        "minimize" => this
-                            .bg(rgb(0xf6be50))
-                            .text_color(rgb(0xf6be50))
-                            .hover(|style| style.text_color(text_color))
-                            .active(|style| style.text_color(text_color)),
-                        _ => this
-                            .bg(rgb(0x61c555))
-                            .text_color(rgb(0x61c555))
-                            .hover(|style| style.text_color(text_color))
-                            .active(|style| style.text_color(text_color))
+                    .map(|this| match self {
+                        Self::Close => this.bg(rgb(0xed6a5f)),
+                        Self::Minimize => this.bg(rgb(0xf6be50)),
+                        _ => this.bg(rgb(0x61c555))
                     })
                     .text_size(px(10.0))
+                    .text_color(color)
                     .window_control_area(self.control_area())
                     .child(self.icon())
             )
     }
 }
+
