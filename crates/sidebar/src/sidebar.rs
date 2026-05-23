@@ -4434,7 +4434,7 @@ impl Sidebar {
             .mt_px()
             .pb_px()
             .when(left_window_controls, |this| {
-                this.children(Self::render_left_window_controls(window, cx))
+                this.children(Self::render_right_window_controls(window, cx))
             })
             .map(|this| {
                 if traffic_lights {
@@ -4482,9 +4482,11 @@ impl Sidebar {
                             }),
                     )
             })
+            /*
             .when(right_window_controls, |this| {
                 this.children(Self::render_right_window_controls(window, cx))
             })
+            */
     }
 
     fn render_left_window_controls(window: &Window, cx: &mut App) -> Option<AnyElement> {
