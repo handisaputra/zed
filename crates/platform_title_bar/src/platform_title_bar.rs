@@ -281,7 +281,7 @@ impl Render for PlatformTitleBar {
             .bg(titlebar_color)
             .content_stretch()
             .when(!window.is_fullscreen(), |title_bar| {
-                let show_right_controls = !(sidebar.open && sidebar.side == SidebarSide::Right);
+                let show_right_controls = !(sidebar.open && sidebar.side == SidebarSide::Left);
 
                 let title_bar = title_bar.children(
                     show_right_controls
