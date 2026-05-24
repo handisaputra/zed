@@ -35,7 +35,7 @@ We use [`cargo-about`](https://github.com/EmbarkStudios/cargo-about) to automati
 - Is `cargo-about` unable to find the license for a dependency? If so, add a clarification field at the end of `script/licenses/zed-licenses.toml`, as specified in the [cargo-about book](https://embarkstudios.github.io/cargo-about/cli/generate/config.html#crate-configuration).
 
 ## Sponsorship
-* When you love Zed on Windows with traffic lights you could [buy me a coffee](paypal.me/h4ndy).
+* When you love Zed on Windows with traffic lights you could [buy me a coffee](https://www.paypal.com/paypalme/h4ndy).
 
 * Zed is developed by **Zed Industries, Inc.**, a for-profit company.
 
