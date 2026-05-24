@@ -5,8 +5,8 @@
 
 Welcome to Zed v1.2.6 with traffic lights on Windows, a high-performance, multiplayer code editor from the creators of [Atom](https://github.com/atom/atom) and [Tree-sitter](https://github.com/tree-sitter/tree-sitter) modified by [Handisaputra](https://github.com/handisaputra).
 
-![Zed with Traffic Lights on Windows](.\assets\images\zed_with_traffic_lights_on_windows.png)
-  
+![Zed with Traffic Lights on Windows](https://github.com/handisaputra/zed/blob/macos_traffic_lights_on_windows/assets/images/zed_with_traffic_lights_on_windows.png)
+
 ---
 
 ### Installation
