@@ -3,29 +3,26 @@
 [![Zed](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/zed-industries/zed/main/assets/badge/v0.json)](https://zed.dev)
 [![CI](https://github.com/zed-industries/zed/actions/workflows/run_tests.yml/badge.svg)](https://github.com/zed-industries/zed/actions/workflows/run_tests.yml)
 
-Welcome to Zed, a high-performance, multiplayer code editor from the creators of [Atom](https://github.com/atom/atom) and [Tree-sitter](https://github.com/tree-sitter/tree-sitter).
+Welcome to Zed v1.2.6 with traffic lights on Windows, a high-performance, multiplayer code editor from the creators of [Atom](https://github.com/atom/atom) and [Tree-sitter](https://github.com/tree-sitter/tree-sitter) modified by [Handisaputra](https://github.com/handisaputra).
 
+![Zed with Traffic Lights on Windows](.\assets\images\zed_with_traffic_lights_on_windows.png)
+  
 ---
 
 ### Installation
 
-On macOS, Linux, and Windows you can [download Zed directly](https://zed.dev/download) or install Zed via your local package manager ([macOS](https://zed.dev/docs/installation#macos)/[Linux](https://zed.dev/docs/linux#installing-via-a-package-manager)/[Windows](https://zed.dev/docs/windows#package-managers)).
+On Windows you can [download Zed directly](https://github.com/handisaputra/zed/releases).
 
-Other platforms are not yet available:
-
-- Web ([tracking issue](https://github.com/zed-industries/zed/issues/5396))
 
 ### Developing Zed
 
-- [Building Zed for macOS](./docs/src/development/macos.md)
-- [Building Zed for Linux](./docs/src/development/linux.md)
-- [Building Zed for Windows](./docs/src/development/windows.md)
+- [Building Zed for Windows](./docs/src/development/windows.md).
 
 ### Contributing
 
 See [CONTRIBUTING.md](./CONTRIBUTING.md) for ways you can contribute to Zed.
 
-Also... we're hiring! Check out our [jobs](https://zed.dev/jobs) page for open roles.
+Also... Zed is hiring! Check out [jobs](https://zed.dev/jobs) page for open roles.
 
 ### Licensing
 
@@ -38,9 +35,11 @@ We use [`cargo-about`](https://github.com/EmbarkStudios/cargo-about) to automati
 - Is `cargo-about` unable to find the license for a dependency? If so, add a clarification field at the end of `script/licenses/zed-licenses.toml`, as specified in the [cargo-about book](https://embarkstudios.github.io/cargo-about/cli/generate/config.html#crate-configuration).
 
 ## Sponsorship
+* When you love Zed on Windows with traffic lights you could [buy me a coffee](paypal.me/h4ndy).
 
-Zed is developed by **Zed Industries, Inc.**, a for-profit company.
+* Zed is developed by **Zed Industries, Inc.**, a for-profit company.
 
-If you’d like to financially support the project, you can do so via GitHub Sponsors.
-Sponsorships go directly to Zed Industries and are used as general company revenue.
-There are no perks or entitlements associated with sponsorship.
+
+  If you’d like to financially support the project, you can do so via GitHub Sponsors.
+  Sponsorships go directly to Zed Industries and are used as general company revenue.
+  There are no perks or entitlements associated with sponsorship.
